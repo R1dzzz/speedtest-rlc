@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Core Typography */
+  --font-sans: 'DM Sans', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+
+  /* Deep Space Theme Colors */
+  --background: 240 50% 4%; /* #05050f */
+  --foreground: 210 40% 98%; /* White-ish */
+  
+  --card: 240 40% 8%; /* Slightly lighter than background */
+  --card-foreground: 210 40% 98%;
+  
+  --popover: 240 40% 8%;
+  --popover-foreground: 210 40% 98%;
+  
+  --primary: 217 91% 60%; /* Neon Blue: #3b82f6 */
+  --primary-foreground: 210 40% 98%;
+  
+  --secondary: 240 30% 15%; /* Dark grayish blue */
+  --secondary-foreground: 210 40% 98%;
+  
+  --muted: 240 30% 15%;
+  --muted-foreground: 215 20% 65%;
+  
+  --accent: 217 91% 60%;
+  --accent-foreground: 210 40% 98%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 240 30% 15%;
+  --input: 240 30% 15%;
+  --ring: 217 91% 60%;
+
+  --radius: 1rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary-foreground;
+    font-family: var(--font-sans);
+    /* Deep space radial gradient */
+    background-image: radial-gradient(circle at 50% 0%, rgba(30, 58, 138, 0.15), transparent 70%),
+                      radial-gradient(circle at 100% 100%, rgba(30, 58, 138, 0.1), transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-tight;
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism utility */
+  .glass-panel {
+    @apply bg-white/[0.02] backdrop-blur-xl border border-white/[0.05] shadow-[0_8px_32px_rgba(0,0,0,0.4)];
+  }
+
+  /* Neon glows */
+  .glow-primary {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4), 
+                inset 0 0 10px rgba(59, 130, 246, 0.2);
+  }
+  
+  .glow-primary-intense {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6), 
+                0 0 60px rgba(59, 130, 246, 0.3),
+                inset 0 0 15px rgba(59, 130, 246, 0.4);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-white to-white/60;
+  }
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600;
+  }
+}
+
+/* Custom Scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.5);
+}
