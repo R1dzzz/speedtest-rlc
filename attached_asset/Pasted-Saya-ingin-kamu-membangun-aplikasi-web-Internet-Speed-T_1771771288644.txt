@@ -1,0 +1,31 @@
+Saya ingin kamu membangun aplikasi web "Internet Speed Test" profesional bernama "Speedtest by RLC" secara full-stack. Aplikasi ini harus memiliki estetika desain futuristik "Dark Mode Premium" yang sangat elegan, meniru gaya visual dari gambar referensi (tema gelap, aksen biru neon glowing, dan glassmorphism).
+
+Berikut adalah spesifikasi teknis dan fitur yang harus diimplementasikan:
+
+1. BRANDING & UI:
+- Nama Brand: "Speedtest by RLC". Tampilkan di Header dan sebagai judul utama.
+- Logo: Siapkan placeholder komponen Image di Navbar. Berikan instruksi jelas di bagian mana saya harus mengunggah file logo saya (misal: logo-rlc.png) dan kode mana yang harus diubah src-nya.
+- Estetika: Gunakan Tailwind CSS. Latar belakang gradasi biru tua gelap (deep space blue). Gunakan efek Glassmorphism (blur transparan) pada kartu hasil. Berikan efek "Glow" atau bayangan neon biru pada tombol dan indikator aktif.
+- Responsivitas: Harus sempurna di layar HP (Mobile-first), Tablet, dan Desktop.
+
+2. FITUR TEKNIS (Full-Stack):
+- Frontend: React dengan Vite dan Tailwind CSS.
+- Backend: Node.js/Express. Buat endpoint khusus untuk tes kecepatan yang akurat:
+    * GET /download: Untuk mengirimkan stream data dummy ke klien.
+    * POST /upload: Untuk menerima data dummy dari klien.
+- Metrik Tes: Aplikasi harus menguji secara berurutan:
+    1. Ping (Latency) dalam ms (Gunakan trik no-cors fetch ke server stabil seperti Google/Cloudflare).
+    2. Jitter (Variasi Latensi) dalam ms.
+    3. Download Speed dalam Mbps (Mengambil data dari backend).
+    4. Upload Speed dalam Mbps (Mengirim data ke backend).
+
+3. FITUR PWA (Installable di HP):
+- Konfigurasikan aplikasi sebagai Progressive Web App (PWA).
+- Buat file manifest.json dan setup Service Worker dasar agar aplikasi ini bisa muncul pilihan "Add to Home Screen" atau "Install App" saat dibuka di browser Chrome (Android) atau Safari (iOS).
+
+4. USER EXPERIENCE (UX):
+- Landing Page: Tombol "MULAI TES" yang besar dengan animasi pulse/glowing.
+- Testing Phase: Tampilkan visualisasi real-time saat tes berjalan (seperti gauge meter yang bergerak atau angka yang bergulir cepat).
+- Result Dashboard: Tampilkan 4 kartu hasil (Download, Upload, Ping, Jitter) dengan ikon modern dan layout yang bersih seperti di gambar referensi. Tambahkan tombol "Tes Ulang".
+
+Tolong buatkan seluruh struktur folder, file backend, file frontend, dan konfigurasi PWA-nya. Saya ingin aplikasi ini siap dijalankan (ready to run).
