@@ -1,0 +1,21 @@
+{
+  "name": "Speedtest by RLC",
+  "short_name": "RLC Speed",
+  "description": "Premium Internet Speed Test Application",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#05050f",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
