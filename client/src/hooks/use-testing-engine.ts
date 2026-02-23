@@ -56,7 +56,7 @@ export function useTestingEngine(onComplete?: (metrics: TestMetrics) => void) {
       const downloadStartTime = performance.now();
       
       // GANTI nama file ini sesuai nama file 100MB lu di folder public
-      const response = await fetch('/dummy-100mb.bin', { cache: 'no-store', signal }); 
+      const response = await fetch('/dummy-20mb.xml', { cache: 'no-store', signal }); 
       const reader = response.body?.getReader();
       if (!reader) throw new Error('Gagal membaca data');
 
